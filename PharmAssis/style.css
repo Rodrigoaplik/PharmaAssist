@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+    color: #fff;
+    background: #00796B;
+    scroll-behavior: smooth;
+  }
+  
+  /* Menu fixo */
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 121, 107, 0.9);
+    padding: 10px 30px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #00e676;
+  }
+  
+  /* Botão de tema */
+  .theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .theme-toggle:hover {
+    transform: rotate(20deg);
+  }
+  
+  /* Imagem de fundo */
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/background.jpg/WhatsApp\ Image\ 2025-04-17\ at\ 20.56.12.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  
+  .container {
+    position: relative;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 80px 30px 30px;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 90%;
+    margin: 140px auto 30px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #00e676; /* Deixa o título com tom de saúde/vitalidade */
+  }
+  
+  p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+  }
+  
+  
+  .info {
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #00e676;
+  }
+  
+  .info ul {
+    margin-top: 10px;
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .info li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+  
+  .btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 30px;
+  }
+  
+  .btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05);
+  }
+  
+  .whatsapp-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Botão Voltar ao Topo */
+  #topBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #topBtn:hover {
+    background-color: #1ebe5d;
+  }
+ /* Botão flutuante do WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 1000;
+  animation: pulse 2s infinite, glow 3s infinite alternate, shake 5s infinite;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+}
+
+/* Animação de pulso */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Animação de brilho */
+@keyframes glow {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+/* Animação de balanço (shake) */
+@keyframes shake {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2px, 2px);
+  }
+  50% {
+    transform: translate(2px, -2px);
+  }
+  75% {
+    transform: translate(-2px, 2px);
+  }
+}
+
+  
+  /* Modo Escuro */
+  body.dark {
+    background: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark .container {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #333;
+  }
+  
+  body.dark .header {
+    background: rgba(0, 150, 47, 0.9);
+  }
+  
+  body.dark .nav-links a {
+    color: #e0e0e0;
+  }
+  
+  body.dark .btn-whatsapp {
+    background-color: #25D366;
+    color: #121212;
+  }
+  
+  body.dark .background-image {
+    opacity: 0.2;
+  }
+  
+  body.dark #topBtn {
+    background-color: #25D366;
+    color: #121212;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+      margin-top: 100px;
+    }
+  
+    h1 {
+      font-size: 2.2em;
+    }
+  
+    p, .info li {
+      font-size: 1em;
+    }
+  
+    .info h2 {
+      font-size: 1.5em;
+    }
+  
+    .btn-whatsapp {
+      padding: 12px 20px;
+      font-size: 1em;
+    }
+  }
+  
